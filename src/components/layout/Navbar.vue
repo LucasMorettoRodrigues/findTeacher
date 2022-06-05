@@ -6,6 +6,9 @@
             </h1>
             <ul>
                 <li>
+                    <router-link to="/register">Register</router-link>
+                </li>
+                <li>
                     <router-link to="/teachers">Teachers</router-link>
                 </li>
                 <li>
@@ -27,16 +30,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 nav h1 a {
     color: white;
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: 500;
 }
 
 nav h1 a span {
     color: yellow;
+    font-weight: bold;
 }
 
 ul {
@@ -45,9 +50,9 @@ ul {
 }
 
 li a {
-    padding: 10px;
-    margin: 0 10px;
-    font-size: 16px;
+    padding: 10px 2px;
+    margin: 0 20px;
+    font-size: 20px;
     color: white;
     border-bottom: 1px solid transparent;
     transition: all .3s ease-out;
