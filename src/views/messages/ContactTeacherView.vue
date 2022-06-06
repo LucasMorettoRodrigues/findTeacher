@@ -39,9 +39,12 @@ export default {
             }
 
             const formData = {
+                teacherId: this.$route.params.id,
                 email,
                 message
             }
+
+            this.$router.push(`/teachers/${this.$route.params.id}`)
         }
     }
 }
