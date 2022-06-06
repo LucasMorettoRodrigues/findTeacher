@@ -43,7 +43,8 @@ li {
     padding: 50px;
     border-radius: 5px;
     margin: 20px;
-    flex-basis: 46%;
+    min-width: 400px;
+    flex: 1;
     background-color: rgba(255, 255, 0, 0.267);
     flex-direction: column;
     align-items: center;
