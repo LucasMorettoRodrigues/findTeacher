@@ -2,12 +2,7 @@
     <li>
         <div class="back"></div>
         <h3>{{ firstName }} {{ lastName }}</h3>
-        <div class="rate">
-            <div>
-                <h2><span>$</span>{{ rate }}</h2>
-            </div>
-            <p>per hour</p>
-        </div>
+        <TeacherRate :rate="rate" />
         <div>
             <BaseBadge v-for="area in areas" :key="area">{{ area }}</BaseBadge>
         </div>
@@ -25,11 +20,13 @@
 <script>
 import BaseButton from '../ui/BaseButton.vue';
 import BaseBadge from '../ui/BaseBadge.vue';
+import TeacherRate from '../teachers/TeacherRate.vue';
 
 export default {
     components: { 
         BaseButton, 
-        BaseBadge 
+        BaseBadge,
+        TeacherRate
     },
     props: ["id", "firstName", "lastName", "areas", "rate"]
 }
@@ -56,24 +53,6 @@ h3 {
     font-weight: 600;
     color: #444;
     margin-bottom: 20px;
-}
-
-.rate {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-    margin-bottom: 30px;
-}
-
-.rate span {
-    font-size: 16px;
-}
-
-.rate p {
-    margin-top: -5px;
-    font-size: 14px;
-    color: #888;
 }
 
 .actions {
