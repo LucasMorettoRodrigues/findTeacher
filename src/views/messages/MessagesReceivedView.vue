@@ -1,12 +1,10 @@
 <template>
     <section class="container">
-        <header>
-            <h2>My Messages</h2>
-        </header>
+        <h3>My Messages</h3>
         <ul v-if="hasMessages">
             <MessageItem v-for="message in messages" :email="message.email" :message="message.message" />
         </ul>
-        <h3 v-else>You does not have messages.</h3>
+        <h4 v-else>You does not have messages.</h4>
     </section>
 </template>
 
@@ -27,3 +25,24 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+}
+</style>
