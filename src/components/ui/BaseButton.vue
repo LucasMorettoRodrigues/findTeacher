@@ -1,8 +1,8 @@
 <template>
-    <button v-if="!link" :class="mode">
+    <button v-if="!link" :class="[size, mode]">
         <slot></slot>
     </button>
-    <router-link v-else :to="to" :class="mode">
+    <router-link v-else :to="to" :class="[size, mode]">
         <slot></slot>
     </router-link>
 </template>
@@ -24,19 +24,35 @@ export default {
             type: String,
             required: false,
             default: 'fill'
+        },
+        size: {
+            type: String,
+            required: false,
+            default: 'small'
         }
     }
 }
 </script>
 
 <style scoped>
+
 button,
 a {
     cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+}
+button.small,
+a.small {
     padding: 10px 20px;
     border-radius: 20px;
-    font-weight: 600;
-    white-space: nowrap;
+}
+
+button.big,
+a.big {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 24px;
 }
 
 button.fill,
@@ -57,7 +73,7 @@ a.outline {
     border: 2px solid rgb(233, 159, 0);
     color: rgb(233, 159, 0);
 }
-button.autline:hover,
+button.outline:hover,
 a.outline:hover {
     background-color: rgba(255, 174, 0, 0.178);
 }
