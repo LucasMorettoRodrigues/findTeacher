@@ -1,6 +1,6 @@
 <template>
     <section class="container filters">
-        <TeacherFilter @category="(category) => setCategoryFilter(category)"/>
+        <TeacherFilter @category="setCategoryFilter"/>
     </section>
     <section class="container">
         <ul v-if="hasTeachers">

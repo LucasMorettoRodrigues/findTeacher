@@ -38,11 +38,13 @@ export default {
                 return
             }
 
-            const formData = {
+            const data = {
                 teacherId: this.$route.params.id,
-                email,
-                message
+                email: this.email,
+                message: this.message
             }
+
+            this.$store.dispatch('addMessage', data)
 
             this.$router.push(`/teachers/${this.$route.params.id}`)
         }

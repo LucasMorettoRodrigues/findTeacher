@@ -18,7 +18,8 @@ import BaseButton from '../ui/BaseButton.vue'
 export default {
     components: {
         BaseButton
-    }
+    },
+    emits: ['category']
 }
 </script>
 

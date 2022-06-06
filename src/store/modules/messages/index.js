@@ -19,13 +19,14 @@ export default {
     },
     mutations: {
         addMessage(state, payload) {
-            state.teachers.push(payload)
+            console.log(payload)
+            state.messages.push(payload)
         }
     },
     actions: {
         addMessage(context, data) {
             const messageData = {
-                id: new Data().toISOString(),
+                id: 'fd',
                 teacherId: data.teacherId,
                 email: data.email,
                 message: data.message
