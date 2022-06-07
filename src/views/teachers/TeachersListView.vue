@@ -1,29 +1,41 @@
 <template>
     <section class="container filters">
-        <TeacherFilter @category="setCategoryFilter"/>
+        <TeacherFilter @category="setCategoryFilter" />
     </section>
     <section class="container">
-        <ul v-if="hasTeachers">
+        <div v-if="isLoading" style="margin-top: 100px">
+            <BaseSpinner />
+        </div>
+        <div class="error" v-if="!!error">
+            <h3>Error</h3>
+            <p>Sorry, something went wrong, try again later.</p>
+            <p>{{ error }}.</p>
+        </div>
+        <ul v-if="hasTeachers && !isLoading">
             <TeacherItem v-for="teacher in filteredTeachers" :key="teacher.id" :id="teacher.id"
                 :firstName="teacher.firstName" :lastName="teacher.lastName" :areas="teacher.areas"
                 :rate="teacher.hourlyRate" />
         </ul>
-        <h3 v-else>Teachers not found.</h3>
+        <h3 v-if="!hasTeachers && !isLoading">Teachers not found.</h3>
     </section>
 </template>
 
 <script>
 import TeacherItem from '../../components/teachers/TeacherItem.vue'
 import TeacherFilter from '../../components/teachers/TeacherFilter.vue';
+import BaseSpinner from '../../components/ui/BaseSpinner.vue';
 
 export default {
-    components: { 
-        TeacherItem, 
-        TeacherFilter 
-    },
+    components: {
+    TeacherItem,
+    TeacherFilter,
+    BaseSpinner
+},
     data() {
         return {
-            categoryFilter: null
+            categoryFilter: null,
+            isLoading: false,
+            error: null
         }
     },    
     computed: {
@@ -37,9 +49,21 @@ export default {
             return this.$store.getters.hasTeachers;
         }
     },
+    created() {
+        this.loadTeachers()
+    },
     methods: {
         setCategoryFilter(category) {
             this.categoryFilter = category
+        },
+        async loadTeachers() {
+            this.isLoading = true
+            try {
+                await this.$store.dispatch('loadTeachers')
+            } catch (error) {
+                this.error = error.message || 'Something went wrong.'
+            }
+            this.isLoading = false
         }
     }
 }
@@ -59,5 +83,14 @@ ul {
     flex-wrap: wrap;
     padding: 0;
     margin: 0 auto;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+.error h3 {
+    font-size: 18px;
+    font-weight: 800;
 }
 </style>

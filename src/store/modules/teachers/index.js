@@ -62,12 +62,15 @@ export default {
     mutations: {
         registerTeacher(state, payload) {
             state.teachers.push(payload)
+        },
+        setTeachers(state, payload) {
+            state.teachers = payload
         }
     },
     actions: {
-        registerTeacher(context, data) {
+        async registerTeacher(context, data) {
             const teacherData = {
-                id: 'c3',
+                id: Math.floor(Math.random() * 99999999),
                 firstName: data.firstName,
                 lastName: data.lastName,
                 description: data.description,
@@ -75,7 +78,39 @@ export default {
                 areas: data.areas
             }
 
+            const response = await fetch(`https://teacherfinder-abef2-default-rtdb.firebaseio.com/teachers/${teacherData.id}.json`, {
+                method: 'PUT',
+                body: JSON.stringify(teacherData)
+            })
+            
+            // const responseData = await response.json()
+
+            if(!response.ok) {
+                const error = new Error(responseData.message || 'Failed to fetch.')
+                throw error
+            }
+
             context.commit('registerTeacher', teacherData)
+        },
+        async loadTeachers(context) {
+            const response = await fetch(
+                `https://teacherfinder-abef2-default-rtdb.firebaseio.com/teachers.json`
+            )
+
+            const responseData = await response.json()
+
+            if(!response.ok) {
+                const error = new Error(responseData.message || 'Failed to fetch.')
+                throw error
+            }
+
+            const teachers = []
+
+            for (const key in responseData) {
+                teachers.push(responseData[key])
+            }
+
+            context.commit('setTeachers', teachers)
         }
     },
     getters: {
