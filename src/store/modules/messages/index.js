@@ -1,38 +1,59 @@
 export default {
     state() {
         return {
-            messages: [
-                {
-                    id: '1',
-                    teacherId: 'c1',
-                    email: 'email@email.com',
-                    message: 'Some message.'
-                },
-                {
-                    id: '2',
-                    teacherId: 'c2',
-                    email: 'email@email.com',
-                    message: 'Some other message.'
-                },
-            ]
+            messages: []
         }
     },
     mutations: {
         addMessage(state, payload) {
-            console.log(payload)
             state.messages.push(payload)
+        },
+        setMessages(state, payload) {
+            state.messages = payload
         }
     },
     actions: {
-        addMessage(context, data) {
+        async addMessage(context, data) {
             const messageData = {
-                id: 'fd',
+                id: Math.floor(Math.random() * 99999999),
                 teacherId: data.teacherId,
                 email: data.email,
                 message: data.message
             }
 
+            const response = await fetch(`https://teacherfinder-abef2-default-rtdb.firebaseio.com/messages/${messageData.id}.json`, {
+                method: 'PUT',
+                body: JSON.stringify(messageData)
+            })
+
+            if (!response.ok) {
+                const error = new Error(responseData.message || 'Failed to fetch.')
+                throw error
+            }
+
             context.commit('addMessage', messageData)
+        },
+        async loadMessages(context) {
+            const response = await fetch(
+                `https://teacherfinder-abef2-default-rtdb.firebaseio.com/messages.json`
+            )
+
+            const responseData = await response.json()
+
+            if (!response.ok) {
+                const error = new Error(responseData.message || 'Failed to fetch.')
+                throw error
+            }
+
+            const messages = []
+
+            for (const key in responseData) {
+                messages.push(responseData[key])
+            }
+
+            console.log(messages)
+
+            context.commit('setMessages', messages)
         }
     },
     getters: {
