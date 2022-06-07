@@ -30,7 +30,7 @@ export default {
         }
     },
     created() {
-        this.selectedTeacher = this.$store.getters.teachers.find(i => i.id === this.$route.params.id)
+        this.selectedTeacher = this.$store.getters.teachers.find(i => `${i.id}` === this.$route.params.id)
     }
 }
 </script>
