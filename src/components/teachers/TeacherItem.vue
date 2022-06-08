@@ -1,11 +1,27 @@
 <template>
     <li>
         <div class="back"></div>
-        <h3>{{ firstName }} {{ lastName }}</h3>
-        <TeacherRate :rate="rate" />
-        <div>
-            <BaseBadge v-for="area in areas" :key="area">{{ area }}</BaseBadge>
-        </div>
+        <article class="card">
+            <div class="card-image">
+                <div class="image">
+                    <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Teacher Photo" />
+                </div>
+            </div>
+            <div class="card-info">
+                <header>
+                    <div>
+                        <h3>{{ firstName }} {{ lastName }}</h3>
+                        <p>English Teacher</p>
+                    </div>
+                    <TeacherRate :rate="rate" />
+                </header>
+                <div>
+                    <BaseBadge class="badges" v-for="area in areas" :key="area">{{ area }}</BaseBadge>
+                </div>
+            </div>
+        </article>
+
         <div class="actions">
             <div>
                 <BaseButton link :to="`/teachers/${id}/contact`" mode="outline">Contact</BaseButton>
@@ -23,8 +39,8 @@ import BaseBadge from '../ui/BaseBadge.vue';
 import TeacherRate from '../teachers/TeacherRate.vue';
 
 export default {
-    components: { 
-        BaseButton, 
+    components: {
+        BaseButton,
         BaseBadge,
         TeacherRate
     },
@@ -36,23 +52,62 @@ export default {
 li {
     position: relative;
     display: flex;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    padding: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.8) 0px 30px 60px -30px;
+    padding: 30px;
     border-radius: 5px;
     margin: 20px;
     min-width: 400px;
+    height: 250px;
     flex: 1;
-    background-color: rgba(255, 255, 0, 0.267);
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
     align-items: center;
     transition: all .5s ease-out;
 }
 
+.card {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card-image {
+    height: 190px;
+    width: 190px;
+}
+
+img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    object-position: right;
+
+}
+
+.card-info {
+    flex: 1;
+    margin-left: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
 h3 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     color: #444;
-    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    font-style: italic;
+}
+
+.badges {
+    margin-bottom: 10px;
 }
 
 .actions {

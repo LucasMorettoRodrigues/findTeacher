@@ -1,5 +1,5 @@
 <template>
-    <h2>Find Your Teacher</h2>
+    <h2>Find Your Teacher Now!</h2>
     <div class="input-control">
         <select name="category" id="category" ref="category">
             <option value="" disabled selected>Category</option>
@@ -8,7 +8,7 @@
             <option value="backend">Backend</option>
             <option value="career">Career</option>
         </select>
-            <BaseButton size="big" @click="$emit('category', this.$refs.category.value)">Search</BaseButton>
+        <BaseButton size="big" @click="$emit('category', this.$refs.category.value)">Search</BaseButton>
     </div>
 </template>
 
@@ -41,12 +41,16 @@ select {
 
 h2 {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 45px;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .input-control {
-    width: 100%;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 80px;
     text-align: center;
+    background-color: white;
 }
 </style>

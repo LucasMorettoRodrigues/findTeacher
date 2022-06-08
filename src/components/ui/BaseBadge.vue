@@ -6,7 +6,6 @@
 
 <style scoped>
 div {
-    display: inline-block;
     padding: 5px 10px;
     border-radius: 10px;
     background-color: rgba(255, 255, 0, 0.39);
