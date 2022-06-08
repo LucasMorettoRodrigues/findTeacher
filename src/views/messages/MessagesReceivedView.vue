@@ -11,7 +11,8 @@
                 <p>{{ error }}.</p>
             </div>
             <ul v-else-if="hasMessages">
-                <MessageItem v-for=" message in messages" :email="message.email" :message="message.message" />
+                <MessageItem v-for="message in messages" :email="message.email" :message="message.message"
+                    :to="teachers.find(i => i.id == message.teacherId).firstName + ' ' + teachers.find(i => i.id == message.teacherId).lastName" />
             </ul>
             <h4 v-else>You does not have messages.</h4>
         </section>
@@ -39,10 +40,14 @@ export default {
         },
         hasMessages() {
             return this.$store.getters.hasMessages;
+        },
+        teachers() {
+            return this.$store.getters.teachers;
         }
     },
     created() {
         this.loadMessages()
+        this.loadTeachers()
     },
     methods: {
         async loadMessages() {
@@ -50,6 +55,17 @@ export default {
 
             try {
                 await this.$store.dispatch('loadMessages')
+            } catch (error) {
+                this.error = error.message || 'Someting went wrong.'
+            }
+
+            this.isLoading = false
+        },
+        async loadTeachers() {
+            this.isLoading = true
+
+            try {
+                await this.$store.dispatch('loadTeachers')
             } catch (error) {
                 this.error = error.message || 'Someting went wrong.'
             }

@@ -1,6 +1,7 @@
 <template>
     <li>
         <div>
+            <p><span>To: </span>{{ to }}</p>
             <a :href="`mailto: ${email}`">{{ email }}</a>
         </div>
         <p>{{ message }}</p>
@@ -9,7 +10,7 @@
 
 <script>
 export default {
-    props: ['email', 'message'],
+    props: ['email', 'message', 'to'],
 }
 </script>
 
@@ -20,6 +21,10 @@ li {
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.8) 0px 30px 60px -30px;
+}
+
+span {
+    font-weight: bold;
 }
 
 a {

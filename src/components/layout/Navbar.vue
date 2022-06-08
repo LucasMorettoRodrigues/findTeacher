@@ -6,7 +6,7 @@
             </h1>
             <ul>
                 <li>
-                    <router-link to="/register">Register</router-link>
+                    <router-link to="/register">Register as a Teacher</router-link>
                 </li>
                 <li>
                     <router-link to="/teachers">Teachers</router-link>
@@ -24,6 +24,7 @@ header {
     background-color: black;
     color: var(--primary-color);
     position: sticky;
+    z-index: 100;
     top: 0;
     left: 0;
 }
