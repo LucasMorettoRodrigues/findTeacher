@@ -20,10 +20,9 @@
 </template>
 
 <style scoped>
-
 header {
     background-color: black;
-    color: yellow;
+    color: var(--primary-color);
 }
 
 nav {
@@ -40,7 +39,7 @@ nav h1 a {
 }
 
 nav h1 a span {
-    color: yellow;
+    color: var(--primary-color-1);
     font-weight: bold;
 }
 
@@ -61,8 +60,7 @@ li a {
 li a:hover,
 li a:active,
 li a.router-link-active {
-    color: yellow;
-    border-color: yellow;
+    color: var(--primary-color-1);
+    border-color: var(--primary-color-1);
 }
-
 </style>
