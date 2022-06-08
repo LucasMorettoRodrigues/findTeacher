@@ -41,6 +41,7 @@ select {
 }
 
 h2 {
+    padding: 0 10px;
     font-weight: bold;
     font-size: 45px;
     letter-spacing: 2px;
@@ -53,5 +54,25 @@ h2 {
     border-radius: 80px;
     text-align: center;
     background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+
+    select {
+        min-width: 150px;
+        width: 62%;
+        font-size: 14px;
+        padding: 12px 12px;
+    }
+
+    h2 {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .input-control {
+        white-space: no-wrap;
+        transform: scale(0.9);
+    }
 }
 </style>

@@ -110,4 +110,15 @@ ul {
     font-size: 18px;
     font-weight: 800;
 }
+
+@media only screen and (max-width: 768px) {
+    h3 {
+        font-size: 30px;
+    }
+
+    ul {
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+}
 </style>

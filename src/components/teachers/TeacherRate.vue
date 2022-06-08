@@ -32,4 +32,15 @@ export default {
     font-size: 14px;
     color: #888;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .rate span {
+        font-size: 14px;
+    }
+
+    .rate p {
+        font-size: 12px;
+    }
+}
 </style>

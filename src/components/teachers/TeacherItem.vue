@@ -55,7 +55,7 @@ li {
     padding: 30px;
     border-radius: 5px;
     margin: 20px;
-    min-width: 400px;
+    min-width: 480px;
     height: 250px;
     flex: 1;
     background-color: rgb(255, 255, 255);
@@ -145,5 +145,41 @@ li:hover .back {
 
 li:hover .actions {
     opacity: 1;
+}
+
+@media only screen and (max-width: 1150px) {
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #444;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    li {
+        padding: 10px;
+        margin: 10px;
+        height: 210px;
+        min-width: 400px;
+    }
+
+    .card-info {
+        margin-left: 10px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    li {
+        min-width: 300px;
+    }
+
+    .card-image {
+        display: none;
+    }
 }
 </style>

@@ -102,4 +102,15 @@ ul {
     font-size: 18px;
     font-weight: 800;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .filters {
+        padding: 30px 0;
+    }
+
+    .error h3 {
+        font-size: 16px;
+    }
+}
 </style>

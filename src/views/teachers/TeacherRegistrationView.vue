@@ -49,4 +49,20 @@ h3 {
     letter-spacing: 2px;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .background {
+        padding: 30px 10px;
+    }
+
+    .wrapper {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+}
 </style>

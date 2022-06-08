@@ -6,7 +6,7 @@
             </h1>
             <ul>
                 <li>
-                    <router-link to="/register">Register as a Teacher</router-link>
+                    <router-link to="/register">Register</router-link>
                 </li>
                 <li>
                     <router-link to="/teachers">Teachers</router-link>
@@ -33,7 +33,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 nav h1 a {
@@ -66,5 +66,35 @@ li a:active,
 li a.router-link-active {
     color: var(--primary-color-1);
     border-color: var(--primary-color-1);
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    nav h1 a {
+        font-size: 30px;
+    }
+
+    ul {
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    li a {
+        font-size: 18px;
+        border: none;
+    }
+
+    li a:hover,
+    li a:active,
+    li a.router-link-active {
+        border: none;
+    }
 }
 </style>

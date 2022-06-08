@@ -12,4 +12,10 @@ div {
     color: rgb(168, 123, 0);
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+    div {
+        font-size: 14px;
+    }
+}
 </style>
