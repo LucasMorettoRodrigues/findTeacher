@@ -12,8 +12,8 @@
 <style scoped>
 .sk-chase {
     margin: 0 auto;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     position: relative;
     animation: sk-chase 2.5s infinite linear both;
 }
@@ -32,7 +32,7 @@
     display: block;
     width: 25%;
     height: 25%;
-    background-color: rgb(255, 196, 0);
+    background-color: white;
     border-radius: 100%;
     animation: sk-chase-dot-before 2.0s infinite ease-in-out both;
 }

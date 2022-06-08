@@ -21,7 +21,6 @@
                 </div>
             </div>
         </article>
-
         <div class="actions">
             <div>
                 <BaseButton link :to="`/teachers/${id}/contact`" mode="outline">Contact</BaseButton>
@@ -81,7 +80,6 @@ img {
     height: 190px;
     object-fit: cover;
     object-position: right;
-
 }
 
 .card-info {

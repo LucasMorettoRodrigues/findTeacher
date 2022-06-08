@@ -75,6 +75,7 @@ export default {
 <style scoped>
 .background {
     background-color: var(--primary-color-1);
+    min-height: 80vh;
 }
 
 .filters {

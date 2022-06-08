@@ -2,11 +2,12 @@
     <h2>Find Your Teacher Now!</h2>
     <div class="input-control">
         <select name="category" id="category" ref="category">
-            <option value="" disabled selected>Category</option>
+            <option value="" disabled selected>Areas of Expertise</option>
             <option value="">Show All</option>
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="career">Career</option>
+            <option value="English for work">English for work</option>
+            <option value="Business English">Business English</option>
+            <option value="English for traveling">English for traveling</option>
+            <option value="English for study abroad">English for study abroad</option>
         </select>
         <BaseButton size="big" @click="$emit('category', this.$refs.category.value)">Search</BaseButton>
     </div>

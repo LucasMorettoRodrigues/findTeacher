@@ -1,20 +1,21 @@
 <template>
-    <section class="container">
-        <h3>My Messages</h3>
-        <div v-if="isLoading" style="margin-top: 100px">
-            <BaseSpinner />
-        </div>
-        <div class="error" v-else-if="!!error">
-            <h3>Error</h3>
-            <p>Sorry, something went wrong, try again later.</p>
-            <p>{{ error }}.</p>
-        </div>
-        <ul v-else-if="hasMessages">
-            <MessageItem v-for=" message in messages" :email="message.email" :message="message.message" />
-        </ul>
-        <h4 v-else>You does not have messages.</h4>
-
-    </section>
+    <div class="background">
+        <section class="container">
+            <h3>My Messages</h3>
+            <div v-if="isLoading" style="margin-top: 100px">
+                <BaseSpinner />
+            </div>
+            <div class="error" v-else-if="!!error">
+                <h3>Error</h3>
+                <p>Sorry, something went wrong, try again later.</p>
+                <p>{{ error }}.</p>
+            </div>
+            <ul v-else-if="hasMessages">
+                <MessageItem v-for=" message in messages" :email="message.email" :message="message.message" />
+            </ul>
+            <h4 v-else>You does not have messages.</h4>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -60,6 +61,11 @@ export default {
 </script>
 
 <style scoped>
+.background {
+    background-color: var(--primary-color-1);
+    min-height: 80vh;
+}
+
 section {
     max-width: 600px;
     margin: 0 auto;
@@ -69,9 +75,9 @@ h3 {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 30px;
+    padding: 40px 0;
+    font-size: 40px;
+    letter-spacing: 2px;
     font-weight: 600;
 }
 

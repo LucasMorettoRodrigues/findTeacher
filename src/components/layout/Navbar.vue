@@ -23,6 +23,9 @@
 header {
     background-color: black;
     color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 nav {
