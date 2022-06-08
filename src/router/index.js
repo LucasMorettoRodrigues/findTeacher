@@ -15,8 +15,7 @@ const router = createRouter({
     },
     { path: '/register', name: 'register', component: () => import('../views/teachers/TeacherRegistrationView.vue') },
     { path: '/messages', name: 'messages', component: () => import('../views/messages/MessagesReceivedView.vue') },
-    { path: '/:notFound(.*)', component: () => import('../views/NotFoundView.vue') }
-    // { path: '/about', name: 'about', component: () => import('../views/AboutView.vue') }
+    { path: '/:notFound(.*)', redirect: '/teachers' }
   ]
 })
 
