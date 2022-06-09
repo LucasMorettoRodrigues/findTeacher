@@ -33,7 +33,7 @@ export default {
 
 .wrapper {
     background-color: white;
-    width: fit-content;
+    width: 60vw;
     margin: 10px auto;
     padding: 20px 50px;
     border-radius: 20px;
@@ -41,7 +41,6 @@ export default {
 }
 
 h3 {
-    max-width: 600px;
     margin: 0 auto;
     padding-top: 20px;
     margin-bottom: 40px;
@@ -51,13 +50,13 @@ h3 {
 }
 
 @media only screen and (max-width: 768px) {
-
     .background {
         padding: 30px 10px;
     }
 
     .wrapper {
         padding: 20px;
+        width: 95vw;
     }
 
     h3 {

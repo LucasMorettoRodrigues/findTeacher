@@ -8,13 +8,15 @@
                 </div>
                 <div class="info">
                     <header>
-                        <div>
+                        <div class="name">
                             <h2>{{ selectedTeacher.firstName }} {{ selectedTeacher.lastName }}</h2>
                             <p>English Teacher</p>
                         </div>
-                        <TeacherRate :rate="selectedTeacher.hourlyRate" />
+                        <div class="rate-container">
+                            <TeacherRate :rate="selectedTeacher.hourlyRate" />
+                        </div>
                     </header>
-                    <div>
+                    <div class="badges-container">
                         <BaseBadge class="badges" v-for="area in selectedTeacher.areas" :key="area">{{ area }}
                         </BaseBadge>
                     </div>
@@ -71,6 +73,7 @@ export default {
 
 .info-section {
     padding: 20px;
+    margin: 10px;
     max-width: 900px;
     background-color: white;
     border-radius: 10px;
@@ -137,5 +140,35 @@ h2 {
 
 .bottom .form {
     margin-top: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .background {
+        padding: 40px 0;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .name {
+        margin-bottom: 5px;
+    }
+
+    .badges-container {
+        margin-top: -45px;
+    }
+
+    .badges {
+        margin-bottom: 5px;
+    }
+
+    .rate-container {
+        margin-bottom: 5px;
+    }
 }
 </style>
