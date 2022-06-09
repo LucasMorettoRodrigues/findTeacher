@@ -1,6 +1,6 @@
 # teacherFinder
 
-teacherFinder is an Responsive Web App build with Vue.js to to gather teachers and those interested in learning english.
+teacherFinder is an Responsive Web App build with Vue.js to gather teachers and those interested in learning english.
 
 ## Live Demo
 [Click here to see live demo.](https://findteacher.vercel.app/teachers)
