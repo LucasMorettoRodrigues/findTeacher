@@ -1,35 +1,27 @@
 # teacherFinder
 
-This template should help get you started developing with Vue 3 in Vite.
+teacherFinder is an Responsive Web App build with Vue.js to to gather teachers and those interested in learning english.
 
-## Recommended IDE Setup
+## Live Demo
+[Click here to see live demo.](https://findteacher.vercel.app/teachers)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Technologies used:
 
-## Customize configuration
+### Frontend
+- Javascript
+- HTML
+- CSS
+- Vue.js
+- Vuex
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Database
+- Firebase
 
-## Project Setup
+### Deploy
+- Vercel
 
-```sh
-npm install
-```
+## Main Applied concepts:
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Async/Await to fetch data from/to Firebase
+- Vuex to manage application state
+- Responsive Design
