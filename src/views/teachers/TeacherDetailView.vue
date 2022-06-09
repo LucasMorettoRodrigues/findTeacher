@@ -69,6 +69,7 @@ export default {
     min-height: 80vh;
     padding-top: 70px;
     padding-bottom: 40px;
+    margin-bottom: 0;
 }
 
 .info-section {
@@ -147,12 +148,20 @@ h2 {
         padding: 40px 0;
     }
 
+    .info-section {
+        padding: 10px;
+    }
+
     header {
         flex-direction: column;
     }
 
     h2 {
         font-size: 18px;
+    }
+
+    .info {
+        margin-left: 10px;
     }
 
     .name {
