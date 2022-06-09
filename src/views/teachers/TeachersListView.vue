@@ -3,7 +3,7 @@
         <section class="container filters">
             <TeacherFilter @category="setCategoryFilter" />
         </section>
-        <section class="container">
+        <section class="container list-section">
             <div v-if="isLoading" style="margin-top: 100px">
                 <BaseSpinner />
             </div>
@@ -83,6 +83,10 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.list-section {
+    padding-bottom: 60px;
 }
 
 ul {
