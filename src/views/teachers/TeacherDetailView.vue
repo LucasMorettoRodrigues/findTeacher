@@ -67,14 +67,14 @@ export default {
 .background {
     background-color: var(--primary-color-1);
     min-height: 80vh;
-    padding-top: 70px;
+    padding-top: 50px;
     padding-bottom: 40px;
     margin-bottom: 0;
 }
 
 .info-section {
     padding: 20px;
-    margin: 10px;
+    margin: 10px auto;
     max-width: 900px;
     background-color: white;
     border-radius: 10px;
@@ -145,7 +145,7 @@ h2 {
 
 @media only screen and (max-width: 768px) {
     .background {
-        padding: 40px 0;
+        padding: 40px 5px;
     }
 
     .info-section {
